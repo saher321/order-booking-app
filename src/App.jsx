@@ -1,18 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import react from "react";
 import "./App.css";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import { BrowserRouter } from "react-router-dom";
+import MainStack from "./navigation/MainStack";
+import Dashboard from "./navigation/Dashboard";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const dashboard = true;
 
   return (
-    <>
-      <Home />
-      <About />
-    </>
+    <BrowserRouter>
+      {!dashboard ? (
+        <>
+          <MainStack />
+        </>
+      ) : (
+        <Dashboard />
+      )}
+    </BrowserRouter>
   );
 }
 
