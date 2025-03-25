@@ -22,14 +22,12 @@ const FlagDropdown = () => {
 
   return (
     <div className="absolute top-8 w-24 border border-zinc-700 rounded-md p-1">
-      {flag.map((item) => {
-        return (
-          <div className="flex justify-between" >
-            <i class={`${item.icon} ml-1`}></i>
-            <p>{item.name}</p>
-          </div>
-        );
-      })}
+      {flag.map((item) => (
+        <div className="flex justify-between">
+          <i class={`${item.icon} ml-1`}></i>
+          <p>{item.name}</p>
+        </div>
+      ))}
     </div>
   );
 };

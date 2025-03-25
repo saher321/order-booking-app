@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import FlagDropdown from "./FlagDropdown";
+import { header } from "../utils/tailwind/header";
 
 const Header = () => {
-
-    const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   const dropdown = () => {
-    setShow(!show)
+    setShow(!show);
   };
 
   return (
     <>
-      <div className="flex justify-between items-center p-2 ">
+      <div className={header.mainContainer}>
         <div>
           <img
             className=" w-24"
@@ -41,7 +41,7 @@ const Header = () => {
             <i class="fa-regular fa-heart mr-2 bg-green-500 py-1 px-2  rounded-full text-white text-sm"></i>
             favorite
           </p>
-          <p className=" text-sm cursor-pointer text-zinc-900 capitalize font-semibold ">
+          <p className=" ">
             <i class="fa-regular fa-user mr-2 bg-green-500 py-1 px-2  rounded-full text-white text-sm"></i>
             account
           </p>
