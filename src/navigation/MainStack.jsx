@@ -1,18 +1,19 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import About from "../pages/About";
+import Offers from "../pages/Offers";
+import FlatSale from "../pages/FlatSale";
+import DailyDeals from "../pages/DailyDeals";
 
-function Navigation() {
+function MainStack() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-
-      <Route path="/about" element={<About />} />
-      <Route path="/about" element={<Sale />} />
-      <Route path="/about" element={<Customer />} />
+      <Route path="/offers" element={<Offers />} />
+      <Route path="/flat-sale" element={<FlatSale />} />
+      <Route path="/daily-deals" element={<DailyDeals />} />
     </Routes>
   );
 }
 
-export default Navigation;
+export default MainStack;
