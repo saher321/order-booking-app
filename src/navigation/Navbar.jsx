@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Navbar() {
+function  Navbar() {
   const [val, setVal] = useState(true);
 
   let vals = "d";
@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <div>
-      <h1>{`${val}`}</h1>
+      <h1>{val}</h1>
       <button onClick={inc} style={{ background: "black", color: "white" }}>
         INCREMENT
       </button>
