@@ -1,21 +1,40 @@
 import React, { useState } from "react";
+import { navbar } from "./css/style";
 
-function  Navbar() {
+function Navbar() {
   const [val, setVal] = useState(true);
+  const [cart, setCart] = useState(0);
 
   let vals = "d";
   console.log(vals, val);
-  
+
   const inc = () => {
     setVal(!val);
   };
 
   return (
-    <div>
-      <h1>{val}</h1>
-      <button onClick={inc} style={{ background: "black", color: "white" }}>
-        INCREMENT
-      </button>
+    <div className="flex justify-between items-center px-2 py-4">
+      <div className=" flex justify-center items-center ">
+        <button className=" bg-slate-900 rounded-md text-white p-2 text-xs font-medium" ><i class="fa-solid fa-table-list mr-1"></i>Browser Category <i class="fa-solid fa-angle-down ml-1"></i></button>
+        <ul className="flex justify-evenly items-center w-72 ">
+          <li>
+            <a className={navbar.navLink} >Home</a>
+          </li>
+          <li>
+            <a className={navbar.navLink}>Offer</a>
+          </li>
+          <li>
+            <a className={navbar.navLink}>Daily Deal</a>
+          </li>
+          <li>
+            <a className={navbar.navLink}>Flat Sale</a>
+          </li>
+        </ul>
+      </div>
+      <div className="flex items-center" >
+        <a className="text-blue-600 text-xs font-medium cursor-pointer"><i class="fa-solid fa-headset "></i> +92 300 1234567</a>
+        <button onClick={()=>setCart(cart+1)} className="text-sm font-medium bg-green-500  rounded-md px-2 py-1 ml-4 text-white " ><i class="fa-solid fa-basket-shopping mr-1"></i> My Cart {cart}</button>
+      </div>
     </div>
   );
 }
