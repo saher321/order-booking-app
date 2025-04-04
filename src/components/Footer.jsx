@@ -59,48 +59,46 @@ const Footer = () => {
 
   return (
     <div className=" bg-slate-900 py-5">
-    <div className="border-b border-gray-500 flex justify-around items-center p-5" >
-
-   
-      <div className=" w-1/4">
-        <img src={Img} className="w-20 " />
-        <p className="text-white text-xs my-2">Subscribe to our newsletter</p>
-        <div className=" bg-slate-50 rounded-3xl p-[2px] flex justify-between items-center pl-3">
-          <input
-            className="text-xs  bg-transparent outline-none  text-black border-none"
-            placeholder="User Email Address"
-          />
-          <button className="bg-green-500 text-white text-xs px-2 py-1 rounded-3xl">
-            Subscribe
-          </button>
+      <div className="border-b border-gray-500 flex justify-around items-center p-5">
+        <div className=" w-1/4">
+          <img src={Img} className="w-20 " />
+          <p className="text-white text-xs my-2">Subscribe to our newsletter</p>
+          <div className=" bg-slate-50 rounded-3xl p-[2px] flex justify-between items-center pl-3">
+            <input
+              className="text-xs  bg-transparent outline-none  text-black border-none"
+              placeholder="User Email Address"
+            />
+            <button className="bg-green-500 text-white text-xs px-2 py-1 rounded-3xl">
+              Subscribe
+            </button>
+          </div>
+          <div className="mt-4 flex items-center">
+            <Icons icon="fa-brands fa-facebook " iconStyle={footer} />
+            <Icons icon="fa-brands fa-x-twitter" iconStyle={footer} />
+            <Icons icon="fa-brands fa-instagram" iconStyle={footer} />
+            <Icons icon="fa-brands fa-youtube" iconStyle={footer} />
+          </div>
         </div>
-        <div className="mt-4 flex items-center">
-          <Icons icon="fa-brands fa-facebook " iconStyle={footer} />
-          <Icons icon="fa-brands fa-x-twitter" iconStyle={footer} />
-          <Icons icon="fa-brands fa-instagram" iconStyle={footer} />
-          <Icons icon="fa-brands fa-youtube" iconStyle={footer} />
+
+        <div className="w-3/4 flex justify-evenly   ">
+          <Text text={support} />
+          <Text text={Legal} />
+          <Text text={Contact} />
         </div>
       </div>
-
-      <div className="w-3/4 flex justify-evenly   ">
-        <Text text={support} />
-        <Text text={Legal} />
-        <Text text={Contact} />
-      </div>
-      </div>
-      <p className="text-white text-sm text-center mt-3" >© StoreKing by iNiLabs 2024, All Rights Reserved</p>
+      <p className="text-white text-sm text-center mt-3">
+        © StoreKing by iNiLabs 2024, All Rights Reserved
+      </p>
     </div>
   );
 };
 
 const Text = ({ text }) => {
-  console.log(text);
   return (
     <div>
-      {text.map((item) => {
-        console.log(item);
+      {text.map((item, index) => {
         return (
-          <>
+          <div key={index}>
             <h1 className="text-bold text-lg capitalize text-white ">
               {item.title}
             </h1>
@@ -112,11 +110,13 @@ const Text = ({ text }) => {
                 {item.text}
               </p>
             </div>
-          </>
+          </div>
         );
       })}
     </div>
   );
 };
+
+
 
 export default Footer;
