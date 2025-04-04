@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { cleaningSubMenuData, foodSubMenuData, nestedMenuData } from "../utils/objectData/navdata";
+import {
+  cleaningSubMenuData,
+  foodSubMenuData,
+  nestedMenuData,
+} from "../utils/objectData/navdata";
 
 function NestedMenu() {
   const [subMenu, setSubMenu] = useState();
@@ -11,7 +15,8 @@ function NestedMenu() {
         return (
           <button
             key={index}
-            onClick={() => setSubMenu(index)}
+            onMouseEnter={() => setSubMenu(index)}
+            // onClick={() => setSubMenu(index)}
             className="my-2 w-full flex justify-between items-center text-sm text-slate-900  "
           >
             <span className="text-xs">{`${item.mainTitle} `}</span>
@@ -22,7 +27,6 @@ function NestedMenu() {
       })}
 
       {subMenu == 0 ? <Foods /> : subMenu == 1 ? <Cleaning /> : ""}
-
     </div>
   );
 }
@@ -34,7 +38,7 @@ const Foods = () => {
         return (
           <button
             key={index}
-            onMouseEnter={()=>console.log('enter')}
+            onMouseEnter={() => console.log("enter")}
             onClick={() => console.log("kkk")}
             className="my-2 w-full flex justify-between items-center text-sm text-slate-900  "
           >
@@ -43,8 +47,6 @@ const Foods = () => {
           </button>
         );
       })}
-
-
     </div>
   );
 };
